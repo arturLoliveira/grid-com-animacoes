@@ -1,0 +1,156 @@
+@charset "UTF-8";
+
+html, body {
+    margin: 30px;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: lightblue;
+    overflow-x: hidden;
+}
+section {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+  }
+  
+label {
+    font-size: 8pt;
+}
+
+.container {
+    display: grid;
+    grid-template:33vh 33vh /1fr 1fr ;
+    grid-gap: 20px;
+    grid-template-areas:
+          "m a"
+          "m b";
+    animation: move 1s;
+   
+}
+
+
+main {
+    background-color: white;
+    grid-area: m;
+    margin-top: 70px;
+    width: 70%;
+    margin-left: 130px;
+}
+h1#txt {
+    margin-left: 150px;
+    top: 100px;
+    margin-bottom: -30px;
+}
+aside#a {
+    background-color: rgb(36, 36, 61);
+    grid-area: a;
+    width: 70%;
+}
+aside#a h1 {
+    text-transform: uppercase;
+    
+}
+aside#c {
+    background-color: rgb(36, 36, 61);
+    height: 33vh;
+    width: 70%;
+    display: none;
+    position: relative;
+    top: -30px;
+    left: 4px;
+     
+}
+aside#c h1 {
+   text-align: center;
+   color: white; 
+}
+
+aside#b {
+    background-color: rgb(16, 16, 68);
+    grid-area: b;
+    width: 70%;
+    color: white;
+    padding-left: 3px;
+    font-size: 8pt;
+    
+}
+input{
+    border-radius: 20px;
+    height: 15px; 
+    margin: 10px;   
+}
+legend {
+    color: white;
+    padding-left: 5px;
+    padding-top: 5px;
+}
+#ccheck:checked ~ #a {
+    animation: move1 0.3s ;
+    animation-fill-mode: forwards;
+}
+#ccheck:checked ~ #c {
+    animation: move2 0.6s ;
+    animation-fill-mode: forwards;
+    display: block;
+    margin-top: -435px;
+}
+#ccheck {
+    display: none;
+}
+img#teste {
+    width: 50px;
+    height: 50px;
+}
+img#enviar {
+    cursor: pointer;
+}
+img#bird {
+    width: 100%;
+    height: 100%;
+}
+
+
+@keyframes move {
+    from {
+      opacity: 0;
+      transform: translateX(-135%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
+  
+  @keyframes fade {
+    from {
+      opacity: 0;
+      transform: scale(0.7);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  @keyframes move1 {
+    from {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+    to {
+      opacity: 0;
+      transform: translateX(135%);
+    }
+  }
+  @keyframes move2 {
+    from {
+      opacity: 0;
+      transform: translateX(-135%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(148%);
+    }
+  }
+  
+  
